@@ -7,7 +7,7 @@ RUN go mod download
 COPY . .
 RUN go build -o /go/bin/greet ./cmd/greet/
 
-FROM alpine:3.14
+FROM alpine:3.16
 COPY --chown=65534:65534 --from=builder /go/bin/greet .
 USER 65534
 
